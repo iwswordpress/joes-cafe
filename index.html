@@ -16,7 +16,7 @@
     }
 
     body {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .w3-half img {
@@ -39,8 +39,10 @@
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
             style="width:100%;font-size:22px">Close Menu</a>
         <div class="w3-container">
-            <h3 class="w3-padding-8"><b>01273 xxx xxx</b></h3>
-            <h3 class="w3-padding-8"><b>joes@joescafe.uk</b></h3>
+            <h3 class="w3-padding-8"><b><a href="tel:01273503917"
+                        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">01273 503 917</a></b></h3>
+            <h3 class="w3-padding-8"><b><a href="mailto:mrcraigwest@hotmail.com?subject=website enquiry">Email
+                        us</a></b></h3>
         </div>
         <div class="w3-bar-block">
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Home</a>
@@ -56,7 +58,9 @@
     <!-- Top menu on small screens -->
     <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
         <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
-        <span>Joe's Cafe 01273 xxx xxx</span>
+        <span>Joe's Cafe <a href="tel:01273503917"
+                style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">01273 503
+                917</a></span>
     </header>
 
     <!-- Overlay effect when opening sidebar on small screens -->
@@ -71,14 +75,21 @@
 
             <h1 class="w3-xxxlarge w3-text-blue"><b>Joe's Cafe.</b></h1>
             <h2>Wed - Sun 9am to 2pm</h2>
-            <hr style="width:50px;border:5px solid blue" class="w3-round">
+            <p>24 Upper Hamilton Rd, Brighton BN1 5DF <a href="#map"
+                    style="color:orange;text-decoration: underline;">MAP</a></p>
+            <p> <a style=" font-size:26px;color:orange;"
+                    href="https://www.google.com/search?q=joes+caffe&amp;rlz=1C1CHBF_en-GBGB908GB908&amp;oq=joes+caffe&amp;aqs=chrome..69i57j46j0j46l2j69i60l3.1621j0j4&amp;sourceid=chrome&amp;ie=UTF-8#lrd=0x4875857aa826caa7:0xae9dbacf2b37cdee,1,,,"
+                    target="_blank">Nearly 300 Google reviews!</a></p>
+
+            <p>
+                <hr style="width:50px;border:5px solid blue" class="w3-round">
         </div>
 
         <!-- Photo grid (modal) -->
         <div class="w3-row-padding">
             <div class="w3-half">
                 <img src="images/outside.jpg" style="width:100%" onclick="onClick(this)" alt="Eating outside">
-                <img src="images/table-of-4.jpg" style="width:100%" onclick="onClick(this)" alt="Food for all the v>
+                <img src="images/table-of-4.jpg" style="width:100%" onclick="onClick(this)" alt="Food for all">
                 <img src=" images/cafe-and-logo.jpg" style="width:100%" onclick="onClick(this)"
                     alt="White walls with designer chairs">
             </div>
@@ -110,11 +121,11 @@
             <p>MEAT - VEGAN - VEGETARIAN - GLUTEN FREE</p>
             <p>Quality, local produce</p>
         </div>
-
+        <!-- 2 menu card -->
         <div class="w3-row-padding">
             <div class="w3-half w3-margin-bottom">
                 <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-blue w3-xlarge w3-padding-32">Breakfasts</li>
+                    <li class="w3-blue w3-xlarge ">Breakfasts</li>
                     <li class="w3-padding-16">Floorplanning</li>
                     <li class="w3-padding-16">10 hours support</li>
                     <li class="w3-padding-16">Photography</li>
@@ -126,7 +137,7 @@
 
             <div class="w3-half">
                 <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-blue w3-xlarge w3-padding-32">Under 12s</li>
+                    <li class="w3-blue w3-xlarge ">Under 12s</li>
                     <li class="w3-padding-16">Floorplanning</li>
                     <li class="w3-padding-16">50 hours support</li>
                     <li class="w3-padding-16">Photography</li>
@@ -136,28 +147,63 @@
                 </ul>
             </div>
         </div>
+        <!-- menu card -->
+        <br><br>
+        <!-- 2 menu card -->
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Sandwiches</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">10 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">20% furniture discount</li>
+                    <li class="w3-padding-16">Good deals</li>
+
+                </ul>
+            </div>
+
+            <div class="w3-half">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Drinks</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">50 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">50% furniture discount</li>
+                    <li class="w3-padding-16">GREAT deals</li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- menu card -->
 
         <!-- The Team -->
-        <div class="w3-row-padding w3-grayscale">
+        <div class="w3-row-padding ">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>Team.</b></h1>
+            <hr style="width:50px;border:5px solid blue" class="w3-round">
             <div class="w3-col m6 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <img src="images/06.png" alt="John" style="width:100%">
+                <div class="w3-light-grey" style="display:flex; border-radius: 10px;">
+
                     <div class="w3-container">
-                        <h3>Julia</h3>
-                        <p class="w3-opacity">CEO & Founder</p>
-                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
-                            elementum.</p>
+
+                        <h3><img src="images/06.png" alt="John"
+                                style="width:100%;width:100px;padding-right: 10px;;">Julia Co-owner
+                        </h3>
+
+                        <p>Julia has worked in the catering industry for over 20 years as well as teaching ...</p>
                     </div>
                 </div>
             </div>
             <div class="w3-col m6 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <img src="images/02.png" alt="Jane" style="width:100%">
+                <div class="w3-light-grey" style="display:flex;border-radius: 10px;">
+
                     <div class="w3-container">
-                        <h3>Andy</h3>
-                        <p class="w3-opacity">Designer</p>
-                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
-                            elementum.</p>
+
+                        <h3><img src="images/02.png" alt="John"
+                                style="width:100%;width:100px;padding-right: 10px;;">Andy Co-owner
+                        </h3>
+
+                        <p>Andyhas been a chef for over 40 years and has worked...</p>
                     </div>
                 </div>
             </div>
@@ -165,47 +211,43 @@
         </div>
 
         <!-- Services -->
-        <div class="w3-container" id="services" style="margin-top:75px">
+        <div class="w3-container" id="services" style="margin-top:0px">
             <h1 class="w3-xxxlarge w3-text-blue"><b>Services.</b></h1>
             <hr style="width:50px;border:5px solid blue" class="w3-round">
-            <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-            <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
+            <p>We can do outside catering.
             </p>
-        </div>
-
-        <!-- about -->
-        <div class="w3-container" id="about" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-blue"><b>Team.</b></h1>
-            <hr style="width:50px;border:5px solid blue" class="w3-round">
-            <p>The best team in the world.</p>
-            <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-            </p>
-            <p><b>Our about are thoughtfully chosen</b>:</p>
+            <p>We create picnic baskets.</p>
         </div>
 
         <!-- End page content -->
     </div>
+    <div class="mapouter" id="map">
+        <div class="gmap_canvas">
+            <iframe width="600" height="400" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=24%20Upper%20Hamilton%20Rd%2C%20Brighton%20BN1%205DF&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe><a href="https://www.whatismyip-address.com/nordvpn-coupon/"></a>
+        </div>
+        <style>
+            .mapouter {
+                position: relative;
+                text-align: right;
+                height: 400px;
+            }
 
-    <!-- W3.CSS Container -->
-    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
-        <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
-                target="_blank" class="w3-hover-opacity">w3.css</a></p>
+            .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 400px;
+            }
+        </style>
     </div>
-
+    <footer>
+        <!-- W3.CSS Container -->
+        <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:25px;">
+            <p class="w3-center">&copy; Joes'Cafe 2020</p>
+        </div>
+    </footer>
     <script>
         // Script to open and close sidebar
         function w3_open() {
