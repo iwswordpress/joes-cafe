@@ -34,6 +34,100 @@
         list-style: none;
     }
 </style>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
+    }
+</style>
 
 <body>
 
@@ -50,8 +144,9 @@
         </div>
         <div class="w3-bar-block">
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Home</a>
-            <a href="#gallery" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Gallery</a>
+
             <a href="#menus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Menus</a>
+            <a href="#gallery" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Gallery</a>
             <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Team</a>
             <a href="#services" onclick="w3_close()"
                 class="w3-bar-item w3-button w3-hover-white w3-xxlarge">Services</a>
@@ -75,22 +170,267 @@
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
         <!-- Header -->
-        <div class="w3-container" style="margin-top:80px" id="gallery">
+        <div class="w3-container" style="margin-top:80px">
 
             <h1 class="w3-xxxlarge w3-text-blue"><b>Joe's Cafe.</b></h1>
             <h2>Wed - Sun 9am to 2pm</h2>
             <p>24 Upper Hamilton Rd, Brighton BN1 5DF <a href="#map"
                     style="color:orange;text-decoration: underline;">MAP</a></p>
-            <p> <a style=" font-size:26px;color:orange;"
-                    href="https://www.google.com/search?q=joes+caffe&amp;rlz=1C1CHBF_en-GBGB908GB908&amp;oq=joes+caffe&amp;aqs=chrome..69i57j46j0j46l2j69i60l3.1621j0j4&amp;sourceid=chrome&amp;ie=UTF-8#lrd=0x4875857aa826caa7:0xae9dbacf2b37cdee,1,,,"
-                    target="_blank">Nearly 300 Google reviews!</a></p>
-
             <p>
-                <hr style="width:50px;border:5px solid blue" class="w3-round">
+                <a style=" font-size:26px;color:orange;"
+                    href="https://www.google.com/search?q=joes+caffe&amp;rlz=1C1CHBF_en-GBGB908GB908&amp;oq=joes+caffe&amp;aqs=chrome..69i57j46j0j46l2j69i60l3.1621j0j4&amp;sourceid=chrome&amp;ie=UTF-8#lrd=0x4875857aa826caa7:0xae9dbacf2b37cdee,1,,,"
+                    target="_blank">Nearly 300 Google reviews!</a>
+
+            </p>
+
+        </div>
+        <div class-"w3-row-padding">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="images/outside.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="images/cafe-and-logo.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="images/outside.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+            </div>
         </div>
 
-        <!-- Photo grid (modal) -->
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 4000); // Change image every 2 seconds
+            }
+        </script>
+
+        <!-- menus / Pricing Tables -->
+        <div class="w3-container" id="menus" style="margin-top:0px">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>Menus.</b></h1>
+            <hr style="width:50px;border:5px solid blue" class="w3-round">
+            <p>MEAT - VEGAN - VEGETARIAN - GLUTEN FREE</p>
+            <p>Quality, local produce</p>
+        </div>
+        <!-- 2 menu card -->
         <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Breakfasts</li>
+                    <ul>
+
+                        <li>
+                            BREAKFAST 1—sausage, bacon, beans, fried/poached egg & toast
+                            £6.50
+                        </li>
+                        <li>
+                            BREAKFAST 2—sausage , bacon, beans, poached/fried egg,
+                            mushrooms, fried potatoes & toast £9.00
+                        </li>
+                        <li>
+                            VEGGIE—veggie sausage, mushrooms, fried potatoes, slow
+                            roasted tomatoes , fried/poached egg beans & toast £9.00
+                        </li>
+                        <li>
+                            VEGAN—vegan sausage, mushrooms , beans, slow roasted
+                            tomatoes, fried potatoes & toast £9.00
+                        </li>
+
+                    </ul>
+            </div>
+
+            <div class="w3-half">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Under 12s</li>
+                    <li>
+                        LITTLE PIGLET—sausage, poached/fried egg, beans &toast £4.50
+                    </li>
+                    <li>
+                        LITTLE VEGGIE—veggie sausage( cumbereland) poached/fried
+                        egg, beans & toast £4.50
+                    </li>
+                    <li>
+                        LITTLE VEGAN –vegan sausage(Cumberland) beans, mushrooms &
+                        toast £4.50
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- menu card -->
+        <br><br>
+        <!-- 2 menu card -->
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Hashes</li>
+                    <li>
+                        MEATY HANGOVER—with bacon, sausage, onion & mushrooms £9.00
+                    </li>
+                    <li>
+                        SPANISH—Spanish chorizo, peppers, mushrooms, onions, paprika
+                        & chilli £9.50 (Veggie & Vegan alternative available— Vegan
+                        no egg but includes a side of beans)
+                    </li>
+                    <li>
+                        VEGAN—vegan sausage, onions, mushrooms, beans and vegan
+                        cheese £9.50
+                    </li>
+
+                    <li>*** <em>For Under 12’s hashes at £6.50***</em><br>Crushed Avocado, Fresh Chilli & Poached
+                        Eggs
+                        £7.00</li>
+
+                    <li>
+                        Lockdown Special—Spicy Breakfast Wrap—2 bacon, 2 fried eggs,
+                        cheese with homemade chill and garlic salsa in a warm wrap
+                        (available for veggie & vegan) £5.50
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="w3-half">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Sandwiches</li>
+                    <li>Bacon £3.50</li>
+                    <li>Sausage (2) £3.80</li>
+                    <li>Free Range Egg (2) £3.00</li>
+                    <li>Veggie Sausage (Leek & Stilton) £3.9</li>
+                    <li>Vegan Sausage (Cumberland) £3.90</li>
+                    <li>
+                        Bacon, Avocado, & Tomatoes (available for Veggie & Vegan)
+                        £4.90
+                    </li>
+                    <li>BLT/VLT £4.90</li>
+                    <li>Fish Finger, tartare and lettuce £4.50</li>
+                    <br />
+
+                    </section>
+                    <div>
+                        <h2>Extras</h2>
+                    </div>
+                    <li>
+                        crushed avocado £3.00; extra sausage (V or VG) £1.80; Black
+                        Pudding £2.00; Slow Roasted tomatoes £2.00; Heinz Beans
+                        £1.00; Extra Egg Fried/Poached £1.00; Extra Bacon £1.00
+                        ;Gluten Free Bread £1.00
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <!-- menu card -->
+        <!-- 3 menu card -->
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Hot Drinks</li>
+                    <li>Mug of English Tea £1.50</li>
+                    <li>Pot of Tea (1 person) £2.00</li>
+                    <li>Flavoured Teas £2.00</li>
+                    <li>Espresso £1.50/£1.80</li>
+                    <li>Black Americano £1.90</li>
+                    <li>White Americano £2.00</li>
+                    <li>Flat White £2.30</li>
+                    <li>Cortado £2.30</li>
+                    <li>Cappuccino/Latte £2.50</li>
+                    <li>Mocha £2.60</li>
+                    <li>Hot Chocolate £2.60 (add marshmallows 20p/cream 30p)</li>
+                    <li>Chai Latte £2.60</li>
+                    <li>
+                        Extras: Syrup Shots 30p; Alternative Milks 30p (Oat, Soya,
+                        Almond, Coconut)
+                    </li>
+                    <br />
+
+                </ul>
+            </div>
+
+            <div class="w3-half">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge ">Cold Drinks</li>
+
+                    <h2>Smoothies</h2>
+                    <li>
+                        Tropical – Mango, Pineapple, Watermelon, Coconut Milk and
+                        Apple Juice £3.50
+                    </li>
+                    <li>
+                        Cherry Berry– Cherries and Berries mixed with our freshly
+                        squeezed O.J £3.50
+                    </li>
+                    <li>
+                        Ginger Zing– Kiwi, Mango, Pineapple, Ginger, Chia, Coconut
+                        Milk and Chilli £3.50
+                    </li>
+                    <br />
+                    <li>Joe’s Freshly Squeezed O. J. Reg £2.80; Lge £3.50</li>
+                    <br />
+                    <div class="bold">
+                        <h4>
+                            Milkshakes—made with real fruit, ice cream & topped with
+                            fresh cream (Reg size):
+                        </h4>
+                    </div>
+                    <li>
+                        Chocolate; Strawberry; Banana; Vanilla; Salted Caramel;
+                        Nutella £3.00
+                    </li>
+                    <li>
+                        VEGAN Milkshakes—as above but with our Vegan Ice Cream &
+                        topped with fresh cream (Reg size) please let us know
+                        Alternative Milk (Oat, Soya, Almond, Coconut) £3.00
+                    </li>
+                    <br />
+                    <li>Frobishers Apple Juice £2.20</li>
+                    <li>Coke, Diet Coke, Rio £1.20</li>
+                    <li>San Pellegrino Lemon/ Orange/Blood Orange £1.40</li>
+                    <li>Cawston Apple/Cawston Apple & Rhubarb £1.40</li>
+                    <li>Still Water/ Sparkling £1.00</li>
+                </ul>
+            </div>
+        </div>
+        <!-- menu card -->
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-container" id="gallery" style="margin-top:0px">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>Gallery.</b></h1>
+            <hr style="width:50px;border:5px solid blue" class="w3-round">
             <div class="w3-half">
                 <img src="images/outside.jpg" style="width:100%" onclick="onClick(this)" alt="Eating outside">
                 <!-- <img src="images/table-of-4.jpg" style="width:100%" onclick="onClick(this)" alt="Food for all"> -->
@@ -114,261 +454,72 @@
                     <p id="caption"></p>
                 </div>
             </div>
-
-            <!-- menus / Pricing Tables -->
-            <div class="w3-container" id="menus" style="margin-top:75px">
-                <h1 class="w3-xxxlarge w3-text-blue"><b>Menus.</b></h1>
-                <hr style="width:50px;border:5px solid blue" class="w3-round">
-                <p>MEAT - VEGAN - VEGETARIAN - GLUTEN FREE</p>
-                <p>Quality, local produce</p>
-            </div>
-            <!-- 2 menu card -->
-            <div class="w3-row-padding">
-                <div class="w3-half w3-margin-bottom">
-                    <ul class="w3-ul w3-light-grey w3-center">
-                        <li class="w3-blue w3-xlarge ">Breakfasts</li>
-                        <ul>
-
-                            <li>
-                                BREAKFAST 1—sausage, bacon, beans, fried/poached egg & toast
-                                £6.50
-                            </li>
-                            <li>
-                                BREAKFAST 2—sausage , bacon, beans, poached/fried egg,
-                                mushrooms, fried potatoes & toast £9.00
-                            </li>
-                            <li>
-                                VEGGIE—veggie sausage, mushrooms, fried potatoes, slow
-                                roasted tomatoes , fried/poached egg beans & toast £9.00
-                            </li>
-                            <li>
-                                VEGAN—vegan sausage, mushrooms , beans, slow roasted
-                                tomatoes, fried potatoes & toast £9.00
-                            </li>
-
-                        </ul>
-                </div>
-
-                <div class="w3-half">
-                    <ul class="w3-ul w3-light-grey w3-center">
-                        <li class="w3-blue w3-xlarge ">Under 12s</li>
-                        <li>
-                            LITTLE PIGLET—sausage, poached/fried egg, beans &toast £4.50
-                        </li>
-                        <li>
-                            LITTLE VEGGIE—veggie sausage( cumbereland) poached/fried
-                            egg, beans & toast £4.50
-                        </li>
-                        <li>
-                            LITTLE VEGAN –vegan sausage(Cumberland) beans, mushrooms &
-                            toast £4.50
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <!-- menu card -->
-            <br><br>
-            <!-- 2 menu card -->
-            <div class="w3-row-padding">
-                <div class="w3-half w3-margin-bottom">
-                    <ul class="w3-ul w3-light-grey w3-center">
-                        <li class="w3-blue w3-xlarge ">Hashes</li>
-                        <li>
-                            MEATY HANGOVER—with bacon, sausage, onion & mushrooms £9.00
-                        </li>
-                        <li>
-                            SPANISH—Spanish chorizo, peppers, mushrooms, onions, paprika
-                            & chilli £9.50 (Veggie & Vegan alternative available— Vegan
-                            no egg but includes a side of beans)
-                        </li>
-                        <li>
-                            VEGAN—vegan sausage, onions, mushrooms, beans and vegan
-                            cheese £9.50
-                        </li>
-
-                        <li>*** <em>For Under 12’s hashes at £6.50***</em><br>Crushed Avocado, Fresh Chilli & Poached
-                            Eggs
-                            £7.00</li>
-
-                        <li>
-                            Lockdown Special—Spicy Breakfast Wrap—2 bacon, 2 fried eggs,
-                            cheese with homemade chill and garlic salsa in a warm wrap
-                            (available for veggie & vegan) £5.50
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="w3-half">
-                    <ul class="w3-ul w3-light-grey w3-center">
-                        <li class="w3-blue w3-xlarge ">Sandwiches</li>
-                        <li>Bacon £3.50</li>
-                        <li>Sausage (2) £3.80</li>
-                        <li>Free Range Egg (2) £3.00</li>
-                        <li>Veggie Sausage (Leek & Stilton) £3.9</li>
-                        <li>Vegan Sausage (Cumberland) £3.90</li>
-                        <li>
-                            Bacon, Avocado, & Tomatoes (available for Veggie & Vegan)
-                            £4.90
-                        </li>
-                        <li>BLT/VLT £4.90</li>
-                        <li>Fish Finger, tartare and lettuce £4.50</li>
-                        <br />
-
-                        </section>
-                        <div>
-                            <h2>Extras</h2>
-                        </div>
-                        <li>
-                            crushed avocado £3.00; extra sausage (V or VG) £1.80; Black
-                            Pudding £2.00; Slow Roasted tomatoes £2.00; Heinz Beans
-                            £1.00; Extra Egg Fried/Poached £1.00; Extra Bacon £1.00
-                            ;Gluten Free Bread £1.00
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <br><br>
-            <!-- menu card -->
-            <!-- 3 menu card -->
-            <div class="w3-row-padding">
-                <div class="w3-half w3-margin-bottom">
-                    <ul class="w3-ul w3-light-grey w3-center">
-                        <li class="w3-blue w3-xlarge ">Hot Drinks</li>
-                        <li>Mug of English Tea £1.50</li>
-                        <li>Pot of Tea (1 person) £2.00</li>
-                        <li>Flavoured Teas £2.00</li>
-                        <li>Espresso £1.50/£1.80</li>
-                        <li>Black Americano £1.90</li>
-                        <li>White Americano £2.00</li>
-                        <li>Flat White £2.30</li>
-                        <li>Cortado £2.30</li>
-                        <li>Cappuccino/Latte £2.50</li>
-                        <li>Mocha £2.60</li>
-                        <li>Hot Chocolate £2.60 (add marshmallows 20p/cream 30p)</li>
-                        <li>Chai Latte £2.60</li>
-                        <li>
-                            Extras: Syrup Shots 30p; Alternative Milks 30p (Oat, Soya,
-                            Almond, Coconut)
-                        </li>
-                        <br />
-
-                    </ul>
-                </div>
-
-                <div class="w3-half">
-                    <ul class="w3-ul w3-light-grey w3-center">
-                        <li class="w3-blue w3-xlarge ">Cold Drinks</li>
-
-
-                        <h2>Smoothies</h2>
-                        <li>
-                            Tropical – Mango, Pineapple, Watermelon, Coconut Milk and
-                            Apple Juice £3.50
-                        </li>
-                        <li>
-                            Cherry Berry– Cherries and Berries mixed with our freshly
-                            squeezed O.J £3.50
-                        </li>
-                        <li>
-                            Ginger Zing– Kiwi, Mango, Pineapple, Ginger, Chia, Coconut
-                            Milk and Chilli £3.50
-                        </li>
-                        <br />
-                        <li>Joe’s Freshly Squeezed O. J. Reg £2.80; Lge £3.50</li>
-                        <br />
-                        <div class="bold">
-                            <h4>
-                                Milkshakes—made with real fruit, ice cream & topped with
-                                fresh cream (Reg size):
-                            </h4>
-                        </div>
-                        <li>
-                            Chocolate; Strawberry; Banana; Vanilla; Salted Caramel;
-                            Nutella £3.00
-                        </li>
-                        <li>
-                            VEGAN Milkshakes—as above but with our Vegan Ice Cream &
-                            topped with fresh cream (Reg size) please let us know
-                            Alternative Milk (Oat, Soya, Almond, Coconut) £3.00
-                        </li>
-                        <br />
-                        <li>Frobishers Apple Juice £2.20</li>
-                        <li>Coke, Diet Coke, Rio £1.20</li>
-                        <li>San Pellegrino Lemon/ Orange/Blood Orange £1.40</li>
-                        <li>Cawston Apple/Cawston Apple & Rhubarb £1.40</li>
-                        <li>Still Water/ Sparkling £1.00</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- menu card -->
-            <!-- The Team -->
-            <div class="w3-row-padding ">
-                <h1 class="w3-xxxlarge w3-text-blue"><b>Team.</b></h1>
-                <hr style="width:50px;border:5px solid blue" class="w3-round">
-                <div class="w3-col m6 w3-margin-bottom">
-                    <div class="w3-light-grey" style="display:flex; border-radius: 10px;">
-
-                        <div class="w3-container">
-
-                            <h3><img src="images/06.png" alt="John"
-                                    style="width:100%;width:100px;padding-right: 10px;;">Julia Co-owner
-                            </h3>
-
-                            <p>Julia has worked in the catering industry for over 20 years as well as teaching ...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col m6 w3-margin-bottom">
-                    <div class="w3-light-grey" style="display:flex;border-radius: 10px;">
-
-                        <div class="w3-container">
-
-                            <h3><img src="images/02.png" alt="John"
-                                    style="width:100%;width:100px;padding-right: 10px;;">Andy Co-owner
-                            </h3>
-
-                            <p>Andy has worked in the catering industry for over 20 years as well as teaching ...</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Services -->
-            <div class="w3-container" id="services" style="margin-top:0px">
-                <h1 class="w3-xxxlarge w3-text-blue"><b>Services.</b></h1>
-                <hr style="width:50px;border:5px solid blue" class="w3-round">
-                <p>We can do outside catering.
-                </p>
-                <p>We create picnic baskets.</p>
-            </div>
-            <div class="mapouter" id="map">
-                <div class="gmap_canvas">
-                    <iframe width="600" height="400" id="gmap_canvas"
-                        src="https://maps.google.com/maps?q=24%20Upper%20Hamilton%20Rd%2C%20Brighton%20BN1%205DF&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                    </iframe><a href="https://www.whatismyip-address.com/nordvpn-coupon/"></a>
-                </div>
-                <style>
-                    .mapouter {
-                        position: relative;
-                        text-align: center;
-                        height: 400px;
-                        width: 100%;
-                    }
-
-                    .gmap_canvas {
-                        overflow: hidden;
-                        background: none !important;
-                        height: 400px;
-                    }
-                </style>
-            </div>
-            <!-- End page content -->
         </div>
+        <!-- The Team -->
+        <div class="w3-container" id="about" style="margin-top:0px">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>Team.</b></h1>
+            <hr style="width:50px;border:5px solid blue" class="w3-round">
+            <div class="w3-col m6 w3-margin-bottom">
+                <div class="w3-light-grey" style="display:flex; border-radius: 10px;margin:0 20px;">
+
+                    <div class="w3-container">
+
+                        <h3><img src="images/06.png" alt="John"
+                                style="width:100%;width:100px;padding-right: 10px;;">Julia Co-owner
+                        </h3>
+
+                        <p>Julia has worked in the catering industry for over 20 years as well as teaching ...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m6 w3-margin-bottom">
+                <div class="w3-light-grey" style="display:flex;border-radius: 10px;">
+
+                    <div class="w3-container">
+
+                        <h3><img src="images/02.png" alt="John"
+                                style="width:100%;width:100px;padding-right: 10px;;">Andy Co-owner
+                        </h3>
+
+                        <p>Andy has worked in the catering industry for over 20 years as well as teaching ...</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Services -->
+        <div class="w3-container" id="services" style="margin-top:0px">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>Services.</b></h1>
+            <hr style="width:50px;border:5px solid blue" class="w3-round">
+            <p>We can do outside catering.
+            </p>
+            <p>We create picnic baskets.</p>
+        </div>
+        <div class="mapouter" id="map">
+            <div class="gmap_canvas">
+                <iframe width="600" height="400" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=24%20Upper%20Hamilton%20Rd%2C%20Brighton%20BN1%205DF&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                </iframe><a href="https://www.whatismyip-address.com/nordvpn-coupon/"></a>
+            </div>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: center;
+                    height: 400px;
+                    width: 100%;
+                }
+
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 400px;
+                }
+            </style>
+        </div>
+        <!-- End page content -->
+    </div>
     </div>
     <footer>
         <!-- W3.CSS Container -->
